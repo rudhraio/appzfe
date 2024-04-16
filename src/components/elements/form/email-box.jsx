@@ -1,7 +1,7 @@
 import { InputBox } from "./input-box";
 
-export function EmailBox() {
+export function EmailBox(props) {
     return (<>
-        <InputBox type="email" />
+        <InputBox type="email" {...props} />
     </>)
 }

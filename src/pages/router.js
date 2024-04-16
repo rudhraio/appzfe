@@ -5,13 +5,20 @@ import SignUp from "./auth/signup/signup";
 import ForgotPassword from "./auth/forgot-password/forgot-password";
 import ResetPassword from "./auth/reset-password/reset-password";
 import AuthPage from "./auth/auth.page";
+import PageLayout from "./page-layout";
 
 const router = createBrowserRouter([
     // Protected Routes
     {
         path: "/",
-        element: "Home",
+        Component: PageLayout,
         loader() { return AuthGuard() },
+        children: [
+            {
+                path: "dashboard",
+                element: "dashboard"
+            },
+        ]
     },
 
     // Un Protected Routes

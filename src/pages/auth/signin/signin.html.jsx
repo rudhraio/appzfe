@@ -8,7 +8,10 @@ import { Text } from "../../../components/elements/ui/text";
 import { Button } from "../../../components/elements/ui/button";
 import { EmailBox } from "../../../components/elements/form/email-box";
 
-function SignInHTML() {
+function SignInHTML(props) {
+
+    const { formHandler, onSubmit } = props;
+
     return (<>
         <section className="flex flex-row h-screen">
             <div className="lg:basis-2/5 basis-full flex flex-col justify-center items-center h-full border-r-2 shadow-lg w-full mx-auto">
@@ -18,12 +21,15 @@ function SignInHTML() {
                         <Text>Sign in to your account</Text>
                     </div>
                     <div className="mt-6">
-                        <Form>
+                        <Form onSubmit={(e) => { e.preventDefault(); formHandler.handleSubmit(onSubmit) }}>
                             <FormField>
                                 <Label>
                                     Email
                                 </Label>
-                                <EmailBox />
+                                <EmailBox
+                                    value={formHandler.values.email.value}
+                                    onChange={(e) => formHandler.handleChange('email', e.target.value)}
+                                />
                             </FormField>
                             <FormField>
                                 <div className="flex flex-row justify-between items-center">
@@ -32,7 +38,10 @@ function SignInHTML() {
                                     </Label>
                                     <Link to="/auth/forgot-password" className="text-xs">Forgot Password?</Link>
                                 </div>
-                                <PasswordBox />
+                                <PasswordBox
+                                    value={formHandler.values.password.value}
+                                    onChange={(e) => formHandler.handleChange('password', e.target.value)}
+                                />
                             </FormField>
 
                             <Button className={"max-w-lg"}>Sign In</Button>

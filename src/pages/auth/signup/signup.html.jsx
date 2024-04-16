@@ -9,7 +9,10 @@ import { Button } from "../../../components/elements/ui/button";
 import { Text } from "../../../components/elements/ui/text";
 import { EmailBox } from "../../../components/elements/form/email-box";
 
-function SignUpHTML() {
+function SignUpHTML(props) {
+
+    const { formHandler, onSubmit } = props;
+
     return (<>
         <section className="flex flex-row h-screen">
             <div className="lg:basis-2/5 basis-full flex flex-col justify-center items-center h-full border-r-2 shadow-lg w-full mx-auto">
@@ -19,27 +22,37 @@ function SignUpHTML() {
                         <Text>Create a new account</Text>
                     </div>
                     <div className="mt-6">
-                        <Form>
+                        <Form onSubmit={(e) => { e.preventDefault(); formHandler.handleSubmit(onSubmit) }}>
                             <FormField>
                                 <Label>
                                     Name
                                 </Label>
-                                <InputBox />
+                                <InputBox
+                                    value={formHandler.values.name.value}
+                                    onChange={(e) => formHandler.handleChange('name', e.target.value)}
+                                />
                             </FormField>
                             <FormField>
                                 <Label>
                                     Email
                                 </Label>
-                                <EmailBox />
+                                <EmailBox
+                                    value={formHandler.values.email.value}
+                                    onChange={(e) => formHandler.handleChange('email', e.target.value)}
+                                />
                             </FormField>
                             <FormField>
                                 <Label>
                                     Password
                                 </Label>
-                                <PasswordBox />
+                                <PasswordBox
+                                    value={formHandler.values.password.value}
+                                    onChange={(e) => formHandler.handleChange('password', e.target.value)}
+                                />
+                                <Text className="text-xs text-gray-700">It must contain at least one uppercase letter, one lowercase letter, one digit, one special character (@, $, !, %, *, ?, or &) and be at least 8 characters long.</Text>
                             </FormField>
 
-                            <Button className={"max-w-lg"}>Sign Up</Button>
+                            <Button className={"max-w-lg"} >Sign Up</Button>
                         </Form>
                     </div>
                     <div className="mt-12">

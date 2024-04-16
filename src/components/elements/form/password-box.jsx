@@ -1,7 +1,7 @@
 import { InputBox } from "./input-box";
 
-export function PasswordBox() {
+export function PasswordBox(props) {
     return (<>
-        <InputBox type="password" />
+        <InputBox type="password" {...props} />
     </>)
 }
