@@ -4,6 +4,7 @@ import SignIn from "./auth/signin/signin";
 import SignUp from "./auth/signup/signup";
 import ForgotPassword from "./auth/forgot-password/forgot-password";
 import ResetPassword from "./auth/reset-password/reset-password";
+import AuthPage from "./auth/auth.page";
 
 const router = createBrowserRouter([
     // Protected Routes
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     {
         path: "/auth",
         index: SignIn,
+        Component: AuthPage,
         loader() { return AuthGuard(false) },
         children: [
             {
@@ -36,6 +38,12 @@ const router = createBrowserRouter([
                 Component: ResetPassword
             },
         ]
+    },
+
+    {
+        path: "/support",
+        loader() { return AuthGuard(false) },
+        element: `Support Team`
     },
 
 
