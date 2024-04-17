@@ -30,7 +30,7 @@ function ForgotPasswordHTML() {
                         </Form>
                     </div>
                     <div className="mt-12">
-                        <Text>Had an account? <Link to="/auth/signup" className="underline">Sign In</Link></Text>
+                        <Text>Had an account? <Link to="/auth/signin" className="underline">Sign In</Link></Text>
                     </div>
                 </div>
             </div>
