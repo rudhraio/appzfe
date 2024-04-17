@@ -8,7 +8,11 @@ import { Button } from "../../../components/elements/ui/button";
 import { Heading1, Heading2 } from "../../../components/elements/ui/headings";
 import { Text } from "../../../components/elements/ui/text";
 
-function ResetPasswordHTML() {
+function ResetPasswordHTML(props) {
+
+    const { email, formHandler, onSubmit, showMessage } = props;
+
+
     return (<>
         <section>
             <div className="flex justify-center mt-48">
@@ -19,16 +23,34 @@ function ResetPasswordHTML() {
                             Type in a new secure password and press save to update your password
                         </Text>
                     </div>
+                    {
+                        showMessage.show && <div className="mt-4">
+                            <Text className={`p-2 px-3 capitalize ${showMessage.error ? "bg-red-300" : "bg-green-200"} rounded font-medium`}>
+                                {showMessage.message} <br />
+                            </Text>
+                            {
+                                !showMessage.error && <Text>
+                                    Redirecting to Sign In ...
+                                </Text>
+                            }
+
+                        </div>
+                    }
                     <div className="mt-6">
-                        <Form>
+                        <Form onSubmit={(e) => { e.preventDefault(); formHandler.handleSubmit(onSubmit) }}>
                             <div>
-                                <Text> Email: user@example.com</Text>
+                                <Text> Email: {email}</Text>
                             </div>
                             <FormField>
                                 <Label>
                                     New Password
                                 </Label>
-                                <PasswordBox />
+                                <PasswordBox
+                                    value={formHandler.values.password.value}
+                                    onChange={(e) => formHandler.handleChange('password', e.target.value)}
+                                />
+                                <Text className="text-xs text-gray-700">It must contain at least one uppercase letter, one lowercase letter, one digit, one special character (@, $, !, %, *, ?, or &) and be at least 8 characters long.</Text>
+
                             </FormField>
 
                             <Button className={"max-w-lg"}>
