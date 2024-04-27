@@ -51,7 +51,6 @@ function ResetPassword() {
 
 
     async function onSubmit(values) {
-        console.log("{ ...values, email, code }", { ...values, email: userDetails.email, code: userDetails.code });
         if (!formHandler.isFormValid()) {
             return;
         }
@@ -59,7 +58,6 @@ function ResetPassword() {
 
         const response = await resetPasswordAPI({ ...values, email: userDetails.email, code: userDetails.code });
         const { data } = response;
-        console.log("Data: ", data);
         if (data.status !== 200) {
             setShowMessage({
                 error: true,

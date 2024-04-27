@@ -6,60 +6,77 @@ import ForgotPassword from "./auth/forgot-password/forgot-password";
 import ResetPassword from "./auth/reset-password/reset-password";
 import AuthPage from "./auth/auth.page";
 import PageLayout from "./page-layout";
+import AccountPage from "./account/account.page";
+import Profile from "./account/profile/profile";
+import ChangePassword from "./account/change-password/change-password";
 
 const router = createBrowserRouter([
-    // Protected Routes
-    {
-        path: "/",
-        Component: PageLayout,
-        loader() { return AuthGuard() },
+  // Protected Routes
+  {
+    path: "/",
+    Component: PageLayout,
+    loader() { return AuthGuard() },
+    children: [
+      {
+        path: "dashboard",
+        element: "dashboard"
+      },
+      {
+        path: "account",
+        Component: AccountPage,
         children: [
-            {
-                path: "dashboard",
-                element: "dashboard"
-            },
+          {
+            path: "profile",
+            Component: Profile
+          },
+          {
+            path: "change-password",
+            Component: ChangePassword
+          }
         ]
-    },
+      }
+    ]
+  },
 
-    // Un Protected Routes
-    {
-        path: "/auth",
-        index: SignIn,
-        Component: AuthPage,
-        loader() { return AuthGuard(false) },
-        children: [
-            {
-                path: "signin",
-                Component: SignIn
-            },
-            {
-                path: "signup",
-                Component: SignUp
-            },
-            {
-                path: "forgot-password",
-                Component: ForgotPassword
-            },
-            {
-                path: "reset-password",
-                Component: ResetPassword
-            },
-        ]
-    },
+  // Un Protected Routes
+  {
+    path: "/auth",
+    index: SignIn,
+    Component: AuthPage,
+    loader() { return AuthGuard(false) },
+    children: [
+      {
+        path: "signin",
+        Component: SignIn
+      },
+      {
+        path: "signup",
+        Component: SignUp
+      },
+      {
+        path: "forgot-password",
+        Component: ForgotPassword
+      },
+      {
+        path: "reset-password",
+        Component: ResetPassword
+      },
+    ]
+  },
 
-    {
-        path: "/support",
-        loader() { return AuthGuard(false) },
-        element: `Support Team`
-    },
+  {
+    path: "/support",
+    loader() { return AuthGuard(false) },
+    element: `Support Team`
+  },
 
 
-    // handle 404 pages
-    {
-        path: "*",
-        loader() { return AuthGuard() },
-        element: `404 Page: Page Not Found`
-    }
+  // handle 404 pages
+  {
+    path: "*",
+    loader() { return AuthGuard() },
+    element: `404 Page: Page Not Found`
+  }
 ])
 
 export default router;

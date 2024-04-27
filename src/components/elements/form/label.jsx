@@ -1,6 +1,6 @@
-export function Label({ children }) {
+export function Label({ children, className }) {
     return (<>
-        <label className="font-medium">
+        <label className={`font-medium ${className}`}>
             {children}
         </label>
     </>)
