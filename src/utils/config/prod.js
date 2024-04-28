@@ -1,5 +1,5 @@
 const prod = {
-    "API": "https://appz.onrender.com"
+    "API": "https://beta.services.zhub.app"
 }
 
 export default prod;
