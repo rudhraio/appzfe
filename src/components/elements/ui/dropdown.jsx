@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const DropdownMenu = ({ children }) => {
+const DropdownMenu = ({ children, position = "right-0" }) => {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
 
@@ -26,19 +26,19 @@ const DropdownMenu = ({ children }) => {
             <div className="dropdown-menu-trigger cursor-pointer" onClick={toggleMenu}>
                 {children[0]}
             </div>
-            <div className={`dropdown-menu-content absolute right-0 mt-2 min-w-64 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded shadow-lg ${isOpen ? 'block' : 'hidden'}`} onClick={toggleMenu}>
+            <div className={`dropdown-menu-content absolute ${position} mt-2 min-w-64 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded shadow-lg ${isOpen ? 'block' : 'hidden'}`} onClick={toggleMenu}>
                 {children.slice(1)}
             </div>
         </div>
     );
 };
 
-const DropdownMenuTrigger = ({ children }) => {
-    return <span className="block">{children}</span>;
+const DropdownMenuTrigger = ({ children, className }) => {
+    return <span className={`block ${className}`}>{children}</span>;
 };
 
 const DropdownMenuContent = ({ children }) => {
-    return <div className="py-1">{children}</div>;
+    return <div className="py-1 max-h-64 overflow-scroll">{children}</div>;
 };
 
 const DropdownMenuLabel = ({ children }) => {

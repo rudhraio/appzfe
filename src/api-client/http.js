@@ -5,8 +5,10 @@ import env from '../utils/config/env';
 const http = axios.create({
     baseURL: env.API, // Your API base URL
     timeout: 10000, // Timeout in milliseconds,
+    withCredentials: true,
     // withCredentials: true, // Add this line to enable credentials (cookies) with cross-origin requests
 });
+
 
 // Request interceptor to add headers, authentication, etc.
 http.interceptors.request.use(

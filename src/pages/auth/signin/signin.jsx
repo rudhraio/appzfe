@@ -37,11 +37,20 @@ function SignIn() {
             return;
         }
 
+        console.log("response", response);
+
 
         const userdata = data.data;
-        localStorage.setItem("access", userdata?.access);
-        localStorage.setItem("refresh", userdata?.refresh);
-        localStorage.setItem("roleaccess", userdata?.refresh);
+
+        const expires = new Date();
+        expires.setDate(expires.getDate() + 5);
+        // document.cookie = `access=${userdata?.access}; expires=${expires.toUTCString()}; path=/;`;
+        // document.cookie = `role=${userdata?.roleaccess}; expires=${expires.toUTCString()}; path=/;`;
+        // document.cookie = `refresh=${userdata?.refresh}; expires=${expires.toUTCString()}; path=/;`;
+
+        // localStorage.setItem("access", userdata?.access);
+        // localStorage.setItem("refresh", userdata?.refresh);
+        // localStorage.setItem("roleaccess", userdata?.roleaccess);
 
         delete userdata.access;
         delete userdata.refresh;

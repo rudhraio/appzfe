@@ -6,6 +6,7 @@ import TextareaBox from "../../../components/elements/form/textarea-box";
 import { Heading2 } from "../../../components/elements/ui/headings";
 import { Button } from "../../../components/elements/ui/button";
 import { Text } from "../../../components/elements/ui/text";
+import PhoneNumberBox from "../../../components/elements/form/phone-number-box";
 function ProfileHTML() {
     return (<>
         <div className="p-2">
@@ -36,7 +37,7 @@ function ProfileHTML() {
                             <div>
                                 <FormField className="w-full">
                                     <Label>Email</Label>
-                                    <InputBox />
+                                    <InputBox value={"rudhra.kueu@nk.dk"} disabled={true} />
                                 </FormField>
                                 <Text className="text-sm text-gray-600">This is your primary email address which will be used for login. This can't be edited.</Text>
                                 <hr className="mt-3" />
@@ -44,7 +45,7 @@ function ProfileHTML() {
                             <div>
                                 <FormField className="w-full">
                                     <Label>Phone Number</Label>
-                                    <InputBox />
+                                    <PhoneNumberBox />
                                 </FormField>
                                 <Text className="text-sm text-gray-600">Enter a phone number to receive important service updates by SMS. This is an optional field.</Text>
                                 <hr className="mt-3" />

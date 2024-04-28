@@ -2,11 +2,27 @@ import { Link, useNavigate } from "react-router-dom";
 import { Heading3 } from "../elements/ui/headings";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../elements/ui/dropdown";
 import { Text } from "../elements/ui/text";
+import { useEffect, useState } from "react";
 
 function Header() {
     const navigate = useNavigate();
+    const [userInfo, setUserInfo] = useState({});
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        setUserInfo(user);
+    }, [])
 
     function logout() {
+
+        var cookies = document.cookie.split(";");
+
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        }
         localStorage.clear();
         navigate("/auth/signin");
     }
@@ -29,11 +45,11 @@ function Header() {
                             <div className="flex flex-row gap-3 items-center">
                                 <div className="w-12 h-12 rounded-full bg-gray-700"></div>
                                 <div>
-                                    <Heading3 className="mb-0">
-                                        Rudhra
+                                    <Heading3 className="mb-0 capitalize">
+                                        {userInfo?.fname} {userInfo?.lname}
                                     </Heading3>
                                     <Text className="text-xs">
-                                        kuruvella.manikanta@gmail.com
+                                        {userInfo?.email}
                                     </Text>
                                 </div>
                             </div>
