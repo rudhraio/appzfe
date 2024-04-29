@@ -7,5 +7,5 @@ export async function profileInfoAPI() {
 }
 
 export async function profileUpdateAPI(payload) {
-    return await http.post(URLS.profileupdate, payload);
+    return await http.put(URLS.profileupdate, payload);
 }

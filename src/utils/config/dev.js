@@ -1,5 +1,5 @@
 const dev = {
-    "API": "https://beta.services.zhub.app"
+    "API": "http://localhost:3535"
 }
 
 export default dev;

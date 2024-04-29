@@ -36,10 +36,6 @@ function SignIn() {
         if (data.status !== 200) {
             return;
         }
-
-        console.log("response", response);
-
-
         const userdata = data.data;
 
         const expires = new Date();

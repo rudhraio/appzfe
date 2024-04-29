@@ -62,6 +62,10 @@ export const useForm = (initialValues) => {
         return returnValue;
     };
 
+    const updateForm = (values) => {
+        setValues(values);
+    }
+
     const updateFieldValidity = (fieldName, isvalid) => {
         setValues({
             ...values,
@@ -93,7 +97,7 @@ export const useForm = (initialValues) => {
     };
 
     const handleSubmit = async (onSubmit) => {
-        
+
         setIsSubmitting(true);
         try {
             validateForm();
@@ -105,16 +109,24 @@ export const useForm = (initialValues) => {
             setIsSubmitting(false);
         }
     };
+    const resetForm = () => {
+        setValues(initialValues);
+        setErrors({});
+        setTouched({});
+        setIsSubmitting(false);
+    };
 
     return {
         values,
         errors,
         touched,
         isSubmitting,
+        updateForm,
         handleChange,
         handleBlur,
         handleSubmit,
         getFormValues,
         isFormValid,
+        resetForm
     };
 };
