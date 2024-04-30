@@ -16,7 +16,7 @@ function AccountPage() {
     }, [location])
 
     return (<>
-        <section className="mt-20 ">
+        <section className="mt-16 ">
             <div className="border-b-2 py-6 px-6 md:px-32">
                 <Heading2 className="mb-0">Account Settings</Heading2>
             </div>

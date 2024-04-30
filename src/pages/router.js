@@ -9,6 +9,7 @@ import PageLayout from "./page-layout";
 import AccountPage from "./account/account.page";
 import Profile from "./account/profile/profile";
 import ChangePassword from "./account/change-password/change-password";
+import Dashboard from "./dashboard/dashboard";
 
 const router = createBrowserRouter([
   // Protected Routes
@@ -18,8 +19,16 @@ const router = createBrowserRouter([
     loader() { return AuthGuard() },
     children: [
       {
+        path: "",
+        Component: Dashboard
+      },
+      {
         path: "dashboard",
-        element: "dashboard"
+        Component: Dashboard
+      },
+      {
+        path: "notifications",
+        element: `<p className="mt-36">Welcome to Notifications</p>`
       },
       {
         path: "account",
@@ -66,7 +75,6 @@ const router = createBrowserRouter([
 
   {
     path: "/support",
-    loader() { return AuthGuard(false) },
     element: `Support Team`
   },
 
