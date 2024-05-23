@@ -10,6 +10,9 @@ import AccountPage from "./account/account.page";
 import Profile from "./account/profile/profile";
 import ChangePassword from "./account/change-password/change-password";
 import Dashboard from "./dashboard/dashboard";
+import ComingSoonHtml from "./coming-soon/comingSoon.html";
+import Notifications from "./notifications/notifications";
+import PageNotFound from "./page-not-found/pageNotFound";
 
 const router = createBrowserRouter([
   // Protected Routes
@@ -28,8 +31,33 @@ const router = createBrowserRouter([
       },
       {
         path: "notifications",
-        element: `<p className="mt-36">Welcome to Notifications</p>`
+        Component: Notifications
       },
+      {
+        path: "analytics",
+        Component: ComingSoonHtml
+      },
+      {
+        path: "forms",
+        Component: ComingSoonHtml
+      },
+      {
+        path: "articles",
+        Component: ComingSoonHtml
+      },
+      {
+        path: "scheduler",
+        Component: ComingSoonHtml
+      },
+      {
+        path: "finance",
+        Component: ComingSoonHtml
+      },
+      {
+        path: "ecom",
+        Component: ComingSoonHtml
+      },
+
       {
         path: "account",
         Component: AccountPage,
@@ -75,7 +103,7 @@ const router = createBrowserRouter([
 
   {
     path: "/support",
-    element: `Support Team`
+    Component: ComingSoonHtml
   },
 
 
@@ -83,7 +111,7 @@ const router = createBrowserRouter([
   {
     path: "*",
     loader() { return AuthGuard() },
-    element: `404 Page: Page Not Found`
+    Component: PageNotFound
   }
 ])
 

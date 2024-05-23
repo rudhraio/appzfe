@@ -14,7 +14,7 @@ function DashboardHTML() {
             Go To
           </Heading3>
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6">
-            <Link to="/" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
+            <Link to="/analytics" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
               <div className="basis-1/3">
                 <img src="assets/images/icons/analytics.svg" alt="analytics icon" className="h-full" />
               </div>
@@ -32,7 +32,7 @@ function DashboardHTML() {
                 </div>
               </div>
             </Link>
-            <Link to="/" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
+            <Link to="/forms" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
               <div className="basis-1/3">
                 <img src="assets/images/icons/forms.svg" alt="analytics icon" className="h-full" />
               </div>
@@ -50,7 +50,7 @@ function DashboardHTML() {
                 </div>
               </div>
             </Link>
-            <Link to="/" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
+            <Link to="/articles" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
               <div className="basis-1/3">
                 <img src="assets/images/icons/articles.svg" alt="analytics icon" className="h-full" />
               </div>
@@ -68,7 +68,7 @@ function DashboardHTML() {
                 </div>
               </div>
             </Link>
-            <Link to="/" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
+            <Link to="/scheduler" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
               <div className="basis-1/3">
                 <img src="assets/images/icons/schedule.svg" alt="analytics icon" className="h-full" />
               </div>
@@ -86,7 +86,7 @@ function DashboardHTML() {
                 </div>
               </div>
             </Link>
-            <Link to="/" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
+            <Link to="/finance" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
               <div className="basis-1/3">
                 <img src="assets/images/icons/invoice.svg" alt="analytics icon" className="h-full" />
               </div>
@@ -104,7 +104,7 @@ function DashboardHTML() {
                 </div>
               </div>
             </Link>
-            <Link to="/" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
+            <Link to="/ecom" className="flex flex-row px-8 py-4 gap-6 items-center bg-gray-100 rounded hover:scale-105 transition max-w-[30rem]">
               <div className="basis-1/3">
                 <img src="assets/images/icons/ecom.svg" alt="analytics icon" className="h-full" />
               </div>
@@ -130,12 +130,11 @@ function DashboardHTML() {
           <div className="ps-4">
             <Heading3 className="mt-6 mb-8 flex flex-row justify-between items-center">
               <span>
-
-                Activities & Notifications
+                Notifications
               </span>
-              <span className="text-xs cursor-pointer">
+              <Link to="/notifications" className="text-xs cursor-pointer">
                 View all
-              </span>
+              </Link>
             </Heading3>
           </div>
 
