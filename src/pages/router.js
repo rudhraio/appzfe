@@ -13,6 +13,9 @@ import Dashboard from "./dashboard/dashboard";
 import ComingSoonHtml from "./coming-soon/comingSoon.html";
 import Notifications from "./notifications/notifications";
 import PageNotFound from "./page-not-found/pageNotFound";
+import Analytics from "./analytics/analytics";
+import AnalyticsHome from "./analytics/analytics-home/analytics-home";
+import AnalyticsView from "./analytics/analytics-view/analytics-view";
 
 const router = createBrowserRouter([
   // Protected Routes
@@ -35,7 +38,17 @@ const router = createBrowserRouter([
       },
       {
         path: "analytics",
-        Component: ComingSoonHtml
+        Component: Analytics,
+        children: [
+          {
+            path: "",
+            Component: AnalyticsHome
+          },
+          {
+            path: ":domain",
+            Component: AnalyticsView
+          }
+        ]
       },
       {
         path: "forms",

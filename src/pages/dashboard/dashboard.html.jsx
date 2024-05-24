@@ -26,7 +26,7 @@ function DashboardHTML() {
                       <Text className="max-w-60 text-xs">This tools helps in page analytics and also to see your website performance in real time.</Text>
                     </div>
                     <div>
-                      <img src="assets/images/icons/link.svg" alt="link icon" className="w-6 h-6" />
+                      <img src="assets/images/icons/open-link.svg" alt="link icon" className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ function DashboardHTML() {
                       <Text className="max-w-60 text-xs">This tools helps in creating custom forms to collect data from users. </Text>
                     </div>
                     <div>
-                      <img src="assets/images/icons/link.svg" alt="link icon" className="w-6 h-6" />
+                      <img src="assets/images/icons/open-link.svg" alt="link icon" className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ function DashboardHTML() {
                       <Text className="max-w-60 text-xs">This tools helps in creating your own blog page or article’s for better ranking in SEO.</Text>
                     </div>
                     <div>
-                      <img src="assets/images/icons/link.svg" alt="link icon" className="w-6 h-6" />
+                      <img src="assets/images/icons/open-link.svg" alt="link icon" className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ function DashboardHTML() {
                       <Text className="max-w-60 text-xs">This tools helps in scheduling meetings easier than ever before. </Text>
                     </div>
                     <div>
-                      <img src="assets/images/icons/link.svg" alt="link icon" className="w-6 h-6" />
+                      <img src="assets/images/icons/open-link.svg" alt="link icon" className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ function DashboardHTML() {
                       <Text className="max-w-60 text-xs">This tools helps in creating quoatation & invoices for your business. </Text>
                     </div>
                     <div>
-                      <img src="assets/images/icons/link.svg" alt="link icon" className="w-6 h-6" />
+                      <img src="assets/images/icons/open-link.svg" alt="link icon" className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
@@ -116,7 +116,7 @@ function DashboardHTML() {
                       <Text className="max-w-60 text-xs">This tools helps you to sell your goods or services online. </Text>
                     </div>
                     <div>
-                      <img src="assets/images/icons/link.svg" alt="link icon" className="w-6 h-6" />
+                      <img src="assets/images/icons/open-link.svg" alt="link icon" className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
